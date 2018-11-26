@@ -5,7 +5,7 @@ $menu-item-background-color: $nav-color;
 $menu-item-hover-background-color: darken($nav-color, 15);
 
 body.home {
-  background: url('https://images.unsplash.com/photo-1421757295538-9c80958e75b0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3628f27cd5768ece147877e2dd792c6c') no-repeat center center fixed; 
+  background: url('https://images.complex.com/complex/images/c_limit,w_680/fl_lossy,pg_1,q_auto/ainihpgp2efksuu4i9we/trippie-redd-topanga-video-love-letter-to-you-3-release-date') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,7 +14,7 @@ body.home {
 }
 
 body {
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  width: 85%; 
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -102,7 +102,7 @@ form h3 {
 label {
     display: inline-block;
     width: 75px;
-    
+
 }
 
 input[type="submit"] {
@@ -117,7 +117,7 @@ label:after {
     display: inline-block;
     color: red;
     font-weight: bold;
-    
+
     input[type=text] {
       border: 2px solid red;
     }
@@ -134,5 +134,5 @@ label:after {
 @media screen and (max-width: 768px) {
    .client .btn-secondary, .client .btn-danger {
         margin-top: 20px;
-    } 
+    }
 }
