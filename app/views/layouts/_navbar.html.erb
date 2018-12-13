@@ -1,17 +1,46 @@
-<nav>
+<% if current_page?(root_path) %>
+<% elsif %>
+<nav class="nav dark-nav">
   <div class="container">
-    <ul class="main-menu">
-      <li><%= link_to "Home", root_path %></li>
-    <% if user_signed_in? %>
-      <li><%= link_to "Clients", clients_path %></li>
-      <li><%= link_to "Locations", locations_path %></li>
-      <li><%= link_to "Appointments", appointments_path %></li>
-      <li class="right"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li class="right"><%= link_to "Sign in", new_user_session_path %></li>
-      <%# <li class="right"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) </li> %>
-      <li class="right"><%= link_to "Sign up", new_user_registration_path %></li>
-    <% end %>
-    </ul>
+    <div class="nav-heading">
+      <button class="toggle-nav" data-toggle="open-navbar1"><i class="fa fa-align-right"></i></button>
+      <%# <%= "Appointment Tracker", class: "brand" %>
+      <a class="brand" >Appointment Tracker</a>
+    </div>
+    <div class="menu" id="open-navbar1">
+      <ul class="list">
+
+        <%# <li class="categories"><a id="open-categories" data-dropdown="target" disable>Categories <i class="fa fa-caret-down"></i></a>
+          <ul class="drop-down" id="target">
+            <li><a href="#">Actions</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="sub-drop-down"><a href="#">Another dropdown menu</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">One more</a></li>
+                <li class="speprator"></li>
+                <li><a href="#">Somthething else here</a></li>
+              </ul>
+            </li>
+            <li class="seprator"></li>
+            <li><a href="#">Seprated link</a></li>
+            <li class="seprator"></li>
+            <li><a href="#">One more seprated link.</a></li>
+          </ul>
+        </li> %>
+        <% if user_signed_in? %>
+          <li><%= link_to "Clients", clients_path %></li>
+          <li><%= link_to "Locations", locations_path %></li>
+          <li><%= link_to "Appointments", appointments_path %></li>
+          <li class="right"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="right"><%= link_to "Sign in", new_user_session_path %></li>
+          <%# <li class="right"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) </li> %>
+          <li class="right"><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
+<% end %>

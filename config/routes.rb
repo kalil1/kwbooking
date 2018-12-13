@@ -1,24 +1,25 @@
 Rails.application.routes.draw do
   resources :appointments
-  resources :locations do 
+  resources :locations do
     resources :appointments, only: [:index, :show, :new]
   end
-  resources :clients do 
+  resources :clients do
     resources :appointments, only: [:index, :show, :new]
   end
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'welcome/home'
-  root 'welcome#home'
-  
+  root 'creatives#index'
+
+
   get '/about', to: 'welcome#about'
-  
+
   get '/locations/:id/client_list', to: 'locations#client_list', as: 'client_list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -69,4 +70,3 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
-
