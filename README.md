@@ -1,24 +1,20 @@
-# README
+# README# KWBOOKING
+KWBOOKING is a one of my personal projects. This application allows users to sign up, create their own appointments. Each appointment has a location client and a price. Don't worry about keeping track of how much money your making at each location or with a specific client.... the app takes care of that as you'll see below.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Project Photos & Details
 
-* System dependencies
+![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/appcalendar.png)
+* Appointments will be marked on the calender matching the given 'Date', 'Time' And "Duration". The appointment's date, time & duration will determine it's placement size on the calender.
+![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/clients.png)
+* clients have their own page you'll see things like how many appointments this client has had with you, how much money they've spent with you and additional information you can add to each client.
+![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/locations_ind.png)
+* Locations have their own page as well you'll see things like how many appointments you've had at this location, how much money you've made there.
+![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/error.png)
+Appointment times that are taken will not be recreated.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<!-- ## Features
+* Search for upcoming appointments.
+* Register for an account.
+* Upload photos to include database. -->
