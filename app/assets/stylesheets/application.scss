@@ -19,3 +19,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+@media screen and (min-width: 0px) and (max-width: 444px) {
+   .content-to-hide {
+      display: none;
+   }
+}
+
+@media (max-width: 1026px) {
+    #fadeshow1 { display: none; }
+    .zoom {
+      zoom: 240%;
+    }
+    .zoom2 {
+      zoom: 200%;
+    }
+
+}

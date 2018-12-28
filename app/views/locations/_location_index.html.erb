@@ -1,16 +1,12 @@
 <div class="location row">
-  <div class="col-sm-3">
+  <div class="col-sm-4">
     <p class="name"><%= show_nickname(location) %></p>
-    <p><%= edit_delete_links(location) %></p>
-  </div>  
-  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-5">
     <%= show_address(location) %>
   </div>
   <div class="col-sm-3">
-    <p><%= client_count(location) %></p>
-  </div>
-  <div class="col-sm-3">
-    <p><%= appointment_count(location) %></p> 
+    <p><%= appointment_count(location) %></p>
     <p><%= location_value(location) %></p>
     <p><%= link_to "Add Appointment", new_location_appointment_path(location), class: "btn btn-primary" %></p>
   </div>

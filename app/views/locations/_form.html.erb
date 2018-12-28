@@ -1,5 +1,6 @@
+<div class="zoom2">
 <%= render partial: "layouts/errors", locals: { object: location } %>
-<%= form_for location do |f| %> 
+<%= form_for location do |f| %>
   <p>
     <%= f.label :nickname %>
     <%= f.text_field :nickname %>
@@ -13,16 +14,18 @@
     <%= f.text_field :city %>
   </p>
   <p>
-    <%= f.label :state %> 
-    <%= f.text_field :state %> 
+    <%= f.label :state %>
+    <%= f.text_field :state %>
   </p>
   <p>
-    <%= f.label :zipcode %> 
+    <%= f.label :zipcode %>
     <%= f.text_field :zipcode %>
   </p>
   <p>
-    <%= f.label :business_name %> 
+    <%= f.label :business_name %>
     <%= f.text_field :business_name %>
   </p>
   <p><%= f.submit %></p>
 <% end %>
+
+</div>

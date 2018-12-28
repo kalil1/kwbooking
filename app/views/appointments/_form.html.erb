@@ -10,23 +10,24 @@
   <div class="field">
     <p id="time">
       <%= label_tag "appointment[appointment_time][hour]", "Time" %>
-      <%= hour_selector("appointment[appointment_time][hour]", appointment) %> : 
-      <%= min_selector("appointment[appointment_time][min]", appointment) %> 
+      <%= hour_selector("appointment[appointment_time][hour]", appointment) %> :
+      <%= min_selector("appointment[appointment_time][min]", appointment) %>
     </p>
   </div>
   <div class="field">
     <p>
-      <%= f.label :duration %> 
+      <%= f.label :duration %>
       <%= duration_hour_field("appointment[duration][hour]", appointment) %>
       <%= duration_minute_field("appointment[duration][min]", appointment) %>
     </p>
   </div>
   <div class="field">
     <p>
-      <%= f.label :price %> 
+      <%= f.label :price %>
       <%= f.number_field :price, step: 0.25, value: float_two_decimals(appointment.price) %>
-    </p>  
+    </p>
   </div>
   <%= location_fields(f, appointment, location) %>
+  <br>
   <p><%= f.submit %></p>
 <% end %>
