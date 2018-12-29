@@ -1,0 +1,23 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  twilio_account_sid:  <%= ENV.fetch("TWILIO_ACCOUNT_SID", "AC5658f5b3db1822c4316e867581b01604") %>
+  twilio_auth_token:  <%= ENV.fetch("TWILIO_AUTH_TOKEN", "0b650725d214c83b69d1fd7750e9cd88") %>
+  twilio_phone_number:  <%= ENV.fetch("TWILIO_PHONE_NUMBER", "+17864085118") %>
+
+development::
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  twilio_account_sid:  <%= ENV.fetch("TWILIO_ACCOUNT_SID", "AC5658f5b3db1822c4316e867581b01604") %>
+  twilio_auth_token:  <%= ENV.fetch("TWILIO_AUTH_TOKEN", "0b650725d214c83b69d1fd7750e9cd88") %>
+  twilio_phone_number:  <%= ENV.fetch("TWILIO_PHONE_NUMBER", "+17864085118") %>
