@@ -23,7 +23,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'frontend-generators'
 
+gem 'figaro'
 
+gem 'twilio-ruby'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
