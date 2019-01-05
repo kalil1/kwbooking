@@ -9,13 +9,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field">
     <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, placeholder: "0000000000" %>
   </div>
 
   <div class="field">
@@ -36,4 +31,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "users/shared/links" %>
