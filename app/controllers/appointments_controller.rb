@@ -19,9 +19,10 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params.merge(user_id: current_user.id))
+    phone = current_user.phone
+    message = "You have a appointment on #{@appointment.appointment_time.strftime('%m/%d/%y at %I:%M%p')} \rClient:#{@appointment.client.name}\rLocation:#{@appointment.location.nickname}\rPayout:$#{@appointment.price}"
     if @appointment.valid?
-      message = "You have a appointment on #{@appointment.appointment_time.strftime('%m/%d/%y at %I:%M%p')} \rClient:#{@appointment.client.name}\rLocation:#{@appointment.location.nickname}\rPayout:$#{@appointment.price}"
-      phone = current_user.phone
+      phone.gsub!(/\D/, '')
       TwilioTextMessenger.new(message, phone).call
       @appointment.save
       redirect_to appointments_path

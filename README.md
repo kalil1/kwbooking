@@ -5,10 +5,11 @@ KWBOOKING is a one of my personal projects. This application allows users to sig
 
 ## Project Photos & Details
 
+![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/sign-up-wp.png)
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/test-appt.png)
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/listed.png)
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/Test-appt-text.png)
-* When appointments are created you'll receive a text with the appointment info.
+* Sign up with your phone number so when your appointments are created you'll receive a text with the appointment info.
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/appcalendar.png)
 * Appointments will be marked on the calender matching the given 'Date', 'Time' And "Duration". The appointment's date, time & duration will determine it's placement size on the calender.
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/clients.png)
