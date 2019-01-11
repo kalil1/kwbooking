@@ -1,4 +1,6 @@
 <%= render partial: "layouts/errors", locals: { object: appointment } %>
+<div class="csform">
+
 <%= form_for appointment do |f| %>
   <%= client_fields(f, appointment, client) %>
   <div class="field">
@@ -31,3 +33,5 @@
   <br>
   <p><%= f.submit %></p>
 <% end %>
+
+</div>

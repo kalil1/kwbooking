@@ -5,7 +5,7 @@ $menu-item-background-color: $nav-color;
 $menu-item-hover-background-color: darken($nav-color, 15);
 
 body.home {
-  background: url('https://images.complex.com/complex/images/c_limit,w_680/fl_lossy,pg_1,q_auto/ainihpgp2efksuu4i9we/trippie-redd-topanga-video-love-letter-to-you-3-release-date') no-repeat center center fixed; 
+  background: url('https://images.complex.com/complex/images/c_limit,w_680/fl_lossy,pg_1,q_auto/ainihpgp2efksuu4i9we/trippie-redd-topanga-video-love-letter-to-you-3-release-date') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,12 +28,6 @@ body {
   margin: 0 auto;
 }
 
-a, a:hover {
-  text-decoration: none !important;
-}
-nav {
-  background: $nav-color;
-}
 .main-menu {
   margin: 0;
   padding: 0;
@@ -89,7 +83,7 @@ h1 a:hover {
 
 // Form Styles //
 
-form {
+.csform {
     width: 400px;
     border: 2px solid black;
     padding: 30px 20px;
@@ -105,9 +99,6 @@ label {
 
 }
 
-input[type="submit"] {
-  margin-left: 80px;
-}
 
 label:after {
   content: ":";
