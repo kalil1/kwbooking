@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'welcome/home'
-  root 'creatives#index'
+  # root 'creatives#index'
+  root 'welcome#home'
 
 
   get '/about', to: 'welcome#about'
