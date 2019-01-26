@@ -1,4 +1,4 @@
-class Location < ActiveRecord::Base
+class template < ActiveRecord::Base
   belongs_to :user
   has_many :appointments, dependent: :destroy
   has_many :clients, through: :appointments

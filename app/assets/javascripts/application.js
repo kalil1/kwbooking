@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
-//= require locations
+//= require templates
 //= require clients
 //= require bootstrap
 //= require appointments

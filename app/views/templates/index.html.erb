@@ -1,6 +1,6 @@
 <div class="zoom">
-<h1>Locations <%= link_to "+ New", new_location_path %></h1>
-<% if @locations.any? %>
+<h1>templates <%= link_to "+ New", new_template_path %></h1>
+<% if @templates.any? %>
 <div class="row">
   <div class="col-sm-5 hidden-xs">
     <h3>Nickname</h3>
@@ -13,10 +13,10 @@
   </div>
 </div>
 <% else %>
-<p>No locations yet.</p>
+<p>No templates yet.</p>
 <% end %>
-<div class="locations">
-  <%= render partial: "location_index", collection: @locations, as: :location %>
+<div class="templates">
+  <%= render partial: "template_index", collection: @templates, as: :template %>
 </div>
 
 </div>

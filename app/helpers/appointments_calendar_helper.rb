@@ -11,8 +11,8 @@ module AppointmentsCalendarHelper
     "height: #{appointment.duration * 40/3600}px;"
   end
   
-  def at_location(appointment)
-    " at #{appointment.location_name}" if appointment.location
+  def at_template(appointment)
+    " at #{appointment.template_name}" if appointment.template
   end
   
   def highlight_appointment(appointment)
@@ -22,7 +22,7 @@ module AppointmentsCalendarHelper
   end
   
   def appointment_text(appointment)
-    "<span class='name'>#{appointment.client_name}</span>#{at_location(appointment)}".html_safe
+    "<span class='name'>#{appointment.client_name}</span>#{at_template(appointment)}".html_safe
   end
   
   def from_to(appointment)

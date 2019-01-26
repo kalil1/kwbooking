@@ -1,0 +1,7 @@
+<div class="zoom">
+<h1>template</h1>
+<%= render @template %>
+<h1>Appointments <%= link_to "+ New", new_template_appointment_path(@template) %></h1>
+<%= render @appointments, template: "appointments/appointment" %>
+
+</div>

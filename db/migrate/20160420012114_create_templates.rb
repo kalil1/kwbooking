@@ -1,6 +1,6 @@
-class CreateLocations < ActiveRecord::Migration[5.1]
+class CreateTemplates < ActiveRecord::Migration[5.1]
   def change
-    create_table :locations do |t|
+    create_table :templates do |t|
       t.string :nickname
       t.string :city
       t.string :street_address

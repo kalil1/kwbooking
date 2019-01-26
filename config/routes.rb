@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :appointments
-  resources :locations do
+  resources :templates do
     resources :appointments, only: [:index, :show, :new]
   end
   resources :clients do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/about', to: 'welcome#about'
 
-  get '/locations/:id/client_list', to: 'locations#client_list', as: 'client_list'
+  get '/templates/:id/client_list', to: 'templates#client_list', as: 'client_list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

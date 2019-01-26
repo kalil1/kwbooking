@@ -1,10 +1,10 @@
 class Appointment < ActiveRecord::Base
-  belongs_to :location
+  belongs_to :template
   belongs_to :user
   belongs_to :client
 
   accepts_nested_attributes_for :client
-  accepts_nested_attributes_for :location
+  accepts_nested_attributes_for :template
 
   def start_time
     self.appointment_time
@@ -18,8 +18,8 @@ class Appointment < ActiveRecord::Base
     client.name
   end
 
-  def location_name
-    location.nickname if location
+  def template_name
+    template.nickname if template
   end
 
   ## Form Parsing methods
@@ -30,10 +30,10 @@ class Appointment < ActiveRecord::Base
     end
   end
 
-  def location_attributes=(atts)
+  def template_attributes=(atts)
     if atts[:nickname] != ""
-      location = self.user.locations.find_or_create_by(atts)
-      self.location = location
+      template = self.user.templates.find_or_create_by(atts)
+      self.template = template
     end
   end
 

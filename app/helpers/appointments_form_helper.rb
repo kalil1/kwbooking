@@ -8,12 +8,12 @@ module AppointmentsFormHelper
     end
   end
   
-  def location_fields(form, appointment, location)
-    if location 
-      output = [content_tag(:h3, "at #{location.nickname}"), hidden_field_tag("appointment[location_id]", location.id)]
+  def template_fields(form, appointment, template)
+    if template 
+      output = [content_tag(:h3, "at #{template.nickname}"), hidden_field_tag("appointment[template_id]", template.id)]
       safe_join(output)
     else 
-      render partial: "location_fields", locals: { f: form, appointment: appointment }
+      render partial: "template_fields", locals: { f: form, appointment: appointment }
     end
   end
   

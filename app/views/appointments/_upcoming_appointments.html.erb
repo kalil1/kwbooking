@@ -109,7 +109,7 @@ body {
 <div class="list2">
   <ul>
     <li>Name</li>
-    <li>Location</li>
+    <li>template</li>
     <li>Number</li>
     <li>Time</li>
     <li>Amount</li>
@@ -117,7 +117,7 @@ body {
   <% @upcoming_appointments.each do |appointment| %>
   <ul>
     <li data-label="first name"> <%= appointment.client.name%> </li>
-    <li data-label="country"> <%= appointment.location.nickname %> </li>
+    <li data-label="country"> <%= appointment.template.nickname %> </li>
     <li data-label="number"> <%= appointment.client.phone_number %> </li>
     <li data-label="reference"> <%= appointment.appointment_time.strftime('%I:%M %p') %> </li>
     <li data-label="description"> <%= number_to_currency(appointment.price) %>

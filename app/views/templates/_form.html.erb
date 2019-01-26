@@ -1,6 +1,6 @@
 <div class="zoom2">
-<%= render partial: "layouts/errors", locals: { object: location } %>
-<%= form_for location do |f| %>
+<%= render partial: "layouts/errors", locals: { object: template } %>
+<%= form_for template do |f| %>
   <p>
     <%= f.label :nickname %>
     <%= f.text_field :nickname %>

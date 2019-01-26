@@ -26,8 +26,8 @@ module AppointmentsAttributeHelper
     content_tag(:p, number_to_currency(appointment.price) )
   end
   
-  def show_location(appointment)
-    content_tag(:p, appointment.location_name )
+  def show_template(appointment)
+    content_tag(:p, appointment.template_name )
   end
   
   

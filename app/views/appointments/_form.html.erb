@@ -29,7 +29,7 @@
       <%= f.number_field :price, step: 0.25, value: float_two_decimals(appointment.price) %>
     </p>
   </div>
-  <%= location_fields(f, appointment, location) %>
+  <%= template_fields(f, appointment, template) %>
   <br>
   <p><%= f.submit %></p>
 <% end %>

@@ -27,7 +27,7 @@ body, html {
     <div class="w3-right w3-hide-small">
       <% if user_signed_in? %>
         <%= link_to "Clients", clients_path, class: "w3-bar-item w3-button" %>
-        <%= link_to "Locations", locations_path, class: "w3-bar-item w3-button" %>
+        <%= link_to "templates", templates_path, class: "w3-bar-item w3-button" %>
         <%= link_to "Appointments", appointments_path, class: "w3-bar-item w3-button" %>
         <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "w3-bar-item w3-button" %>
       <% else %>
@@ -383,7 +383,7 @@ body, html {
         </button>
       </p>
     </form> %>
-    <!-- Image of location/map -->
+    <!-- Image of template/map -->
     <img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
   </div>
 </div>

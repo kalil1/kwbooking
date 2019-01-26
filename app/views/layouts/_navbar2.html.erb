@@ -115,7 +115,7 @@ body {
   <div class="nav-links">
     <% if user_signed_in? %>
       <%= link_to "Clients", clients_path %>
-      <%= link_to "Locations", locations_path %>
+      <%= link_to "templates", templates_path %>
       <%= link_to "Appointments", appointments_path %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "right" %>
     <% else %>

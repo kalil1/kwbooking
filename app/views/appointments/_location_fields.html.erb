@@ -1,17 +1,17 @@
-<% if current_user.locations.any? %>
+<% if current_user.templates.any? %>
 <div class="field">
   <p>
-    <%= f.label :location_id %>
-    <%= collection_select :appointment, :location_id, current_user.locations, :id, :nickname, {prompt: true } %>
+    <%= f.label :template_id %>
+    <%= collection_select :appointment, :template_id, current_user.templates, :id, :nickname, {prompt: true } %>
   </p>
 </div>
 <% end %>
-<p><% if current_user.locations.any? %>Or <% end %>Create a New Location</p>
+<p><% if current_user.templates.any? %>Or <% end %>Create a New template</p>
 <div class="field">
   <p>
-    <%= f.fields_for :location, Location.new do |location_atts| %> 
-      <%= location_atts.label :nickname %>
-      <%= location_atts.text_field :nickname %>
+    <%= f.fields_for :template, template.new do |template_atts| %> 
+      <%= template_atts.label :nickname %>
+      <%= template_atts.text_field :nickname %>
     <% end %>
   </p>
 </div>

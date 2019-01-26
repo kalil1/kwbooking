@@ -1,7 +1,7 @@
 class Client < ActiveRecord::Base
   belongs_to :user
   has_many :appointments, dependent: :destroy
-  has_many :locations, through: :appointments
+  has_many :templates, through: :appointments
   
   def value
     appointments.collect { |a| a.price }.compact.inject(0, :+)

@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
   before_action :set_appointments, only: [:index, :show, :edit]
   before_action :set_client, only: [:index, :new, :edit]
-  before_action :set_location, only: [:index, :new, :edit]
+  before_action :set_template, only: [:index, :new, :edit]
 
   def index
     @upcoming_appointments = current_user.upcoming_appointments
@@ -20,7 +20,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params.merge(user_id: current_user.id))
     phone = current_user.phone
-    message = "You have a appointment on #{@appointment.appointment_time.strftime('%m/%d/%y at %I:%M%p')} \rClient:#{@appointment.client.name}\rLocation:#{@appointment.location.nickname}\rPayout:$#{@appointment.price}"
+    message = "You have a appointment on #{@appointment.appointment_time.strftime('%m/%d/%y at %I:%M%p')} \rClient:#{@appointment.client.name}\rtemplate:#{@appointment.template.nickname}\rPayout:$#{@appointment.price}"
     if @appointment.valid?
       phone.gsub!(/\D/, '')
       TwilioTextMessenger.new(message, phone).call
@@ -56,8 +56,8 @@ class AppointmentsController < ApplicationController
     @client = current_user.clients.find_by(id: params[:client_id])
   end
 
-  def set_location
-    @location = current_user.locations.find_by(id: params[:location_id])
+  def set_template
+    @template = current_user.templates.find_by(id: params[:template_id])
   end
 
   def set_appointment
@@ -73,7 +73,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:client_id, :price, :location_id, location_attributes: [:nickname], client_attributes: [:name], appointment_time: [:date, :hour, :min], duration: [:hour, :min])
+    params.require(:appointment).permit(:client_id, :price, :template_id, template_attributes: [:nickname], client_attributes: [:name], appointment_time: [:date, :hour, :min], duration: [:hour, :min])
   end
 
 end

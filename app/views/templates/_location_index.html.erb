@@ -1,0 +1,13 @@
+<div class="template row">
+  <div class="col-sm-4">
+    <p class="name"><%= show_nickname(template) %></p>
+  </div>
+  <div class="col-sm-5">
+    <%= show_address(template) %>
+  </div>
+  <div class="col-sm-3">
+    <p><%= appointment_count(template) %></p>
+    <p><%= template_value(template) %></p>
+    <p><%= link_to "Add Appointment", new_template_appointment_path(template), class: "btn btn-primary" %></p>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 # README# KWBOOKING
-KWBOOKING is a one of my personal projects. This application allows users to sign up, create their own appointments. Each appointment has a location client and a price. Don't worry about keeping track of how much money your making at each location or with a specific client.... the app takes care of that as you'll see below.
+KWBOOKING is a one of my personal projects. This application allows users to sign up, create their own appointments. Each appointment has a template client and a price. Don't worry about keeping track of how much money your making at each template or with a specific client.... the app takes care of that as you'll see below.
 
 
 
@@ -14,8 +14,8 @@ KWBOOKING is a one of my personal projects. This application allows users to sig
 * Appointments will be marked on the calender matching the given 'Date', 'Time' And "Duration". The appointment's date, time & duration will determine it's placement size on the calender.
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/clients.png)
 * clients have their own page you'll see things like how many appointments this client has had with you, how much money they've spent with you and additional information you can add to each client.
-![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/locations_ind.png)
-* Locations have their own page as well you'll see things like how many appointments you've had at this location, how much money you've made there.
+![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/templates_ind.png)
+* templates have their own page as well you'll see things like how many appointments you've had at this template, how much money you've made there.
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/error.png)
 Appointment times that are taken will not be recreated.
 

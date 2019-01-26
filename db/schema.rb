@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2016_04_20_012901) do
     t.datetime "appointment_time"
     t.integer "duration"
     t.float "price"
-    t.integer "location_id"
+    t.integer "template_id"
     t.integer "user_id"
     t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_appointments_on_client_id"
-    t.index ["location_id"], name: "index_appointments_on_location_id"
+    t.index ["template_id"], name: "index_appointments_on_template_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2016_04_20_012901) do
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
-  create_table "locations", force: :cascade do |t|
+  create_table "templates", force: :cascade do |t|
     t.string "nickname"
     t.string "city"
     t.string "street_address"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2016_04_20_012901) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_locations_on_user_id"
+    t.index ["user_id"], name: "index_templates_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
