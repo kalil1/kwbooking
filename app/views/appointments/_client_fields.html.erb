@@ -1,15 +1,18 @@
-<% if current_user.clients.any? %>
+<% if Client.any? %>
 <div class="field">
   <p>
     <%= label_tag :client %>
-    <%= collection_select :appointment, :client_id, current_user.clients, :id, :name, { prompt: true } %>
+    <%= collection_select :appointment, :client_id, Client.all, :id, :name, { prompt: true } %>
   </p>
 </div>
 <% end %>
-<p><% if current_user.clients.any? %>Or <% end %>Create a New Client</p>
+<p><% if Client.any? %>Or <% end %></p>
 <div class="field">
-  <%= f.fields_for :client, Client.new do |ff| %> 
+  <%= f.fields_for :client, Client.new do |ff| %>
     <%= ff.label :name %>
     <%= ff.text_field :name %>
+    <br>
+    <%= ff.label :phone_number %>
+    <%= ff.number_field :phone_number %>
   <% end %>
 </div>

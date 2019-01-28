@@ -5,7 +5,7 @@
     <div id="fadeshow1" class="nav-heading">
       <button class="toggle-nav" data-toggle="open-navbar1"><i class="fa fa-align-right"></i></button>
       <%# <%= "Appointment Tracker", class: "brand" %>
-      <a class="brand" >Appointment Tracker</a>
+      <a href="/ " class="brand" >Kalil W....</a>
     </div>
     <div class="menu" id="open-navbar1">
       <ul class="list">
@@ -29,16 +29,9 @@
             <li><a href="#">One more seprated link.</a></li>
           </ul>
         </li> %>
-        <% if user_signed_in? %>
-          <li><%= link_to "Clients", clients_path %></li>
-          <li><%= link_to "templates", templates_path %></li>
-          <li><%= link_to "Appointments", appointments_path %></li>
-          <li class="right"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li class="right"><%= link_to "Sign in", new_user_session_path %></li>
-          <%# <li class="right"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) </li> %>
-          <li class="right"><%= link_to "Sign up", new_user_registration_path %></li>
-        <% end %>
+          <%# <li><%= link_to "Clients", clients_path %>
+          <li><%= link_to "Templates", templates_path %></li>
+          <li><%= link_to "Book Me!", appointments_path %></li>
       </ul>
     </div>
   </div>

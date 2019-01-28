@@ -38,11 +38,9 @@ ActiveRecord::Schema.define(version: 2016_04_20_012901) do
 
   create_table "templates", force: :cascade do |t|
     t.string "nickname"
-    t.string "city"
-    t.string "street_address"
-    t.string "state"
-    t.string "zipcode"
-    t.string "business_name"
+    t.string "src"
+    t.string "iframe"
+    t.integer "price"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

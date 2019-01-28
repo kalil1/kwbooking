@@ -1,11 +1,8 @@
-<h1>Appointments <%= link_to "+ New", new_appointment_path %></h1>
+<h1>Appointments <%= link_to "Book Me!", templates_path %></h1>
 <div id="fadeshow1">
   <%= add_weekly_calendar(@appointments) %>
 </div>
 
 
-<% if @upcoming_appointments.any? %>
-  <%= render 'upcoming_appointments' %>
-<% else %>
-  <p>No appointments yet.</p>
-<% end %>
+
+  <%= render 'upcoming_appointments' if !@upcoming_appointments.nil?  %>

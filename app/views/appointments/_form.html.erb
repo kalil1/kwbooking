@@ -23,15 +23,10 @@
       <%= duration_minute_field("appointment[duration][min]", appointment) %>
     </p>
   </div>
-  <div class="field">
-    <p>
-      <%= f.label :price %>
-      <%= f.number_field :price, step: 0.25, value: float_two_decimals(appointment.price) %>
-    </p>
-  </div>
+
   <%= template_fields(f, appointment, template) %>
   <br>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Schedule!!" %></p>
 <% end %>
 
 </div>

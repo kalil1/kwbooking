@@ -1,5 +1,12 @@
+<style media="screen">
+  img {
+    height: 90px;
+    width: auto;
+  }
+</style>
+
+
 <div class="zoom">
-<h1>templates <%= link_to "+ New", new_template_path %></h1>
 <% if @templates.any? %>
 <div class="row">
   <div class="col-sm-5 hidden-xs">
@@ -16,7 +23,22 @@
 <p>No templates yet.</p>
 <% end %>
 <div class="templates">
-  <%= render partial: "template_index", collection: @templates, as: :template %>
+  <% @templates.each do |template| %>
+  <div class="template row">
+    <div class="col-sm-4">
+      <p class="name"><%= link_to template.nickname, template_path(template) %></p>
+    </div>
+    <div class="col-sm-5">
+      <a href="<%= template.iframe %>">
+      <img src="<%= template.src %>" alt="">
+    </a>
+    </div>
+    <div class="col-sm-3">
+      <p><%= template_value(template) %></p>
+      <p><%= link_to "HIRE ME!", new_template_appointment_path(template), class: "btn btn-primary" %></p>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 </div>

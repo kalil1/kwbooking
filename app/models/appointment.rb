@@ -1,6 +1,5 @@
 class Appointment < ActiveRecord::Base
   belongs_to :template
-  belongs_to :user
   belongs_to :client
 
   accepts_nested_attributes_for :client
@@ -24,11 +23,6 @@ class Appointment < ActiveRecord::Base
 
   ## Form Parsing methods
 
-  def client_attributes=(atts)
-    if atts[:name] != ""
-      self.client = self.user.clients.find_or_create_by(atts)
-    end
-  end
 
   def template_attributes=(atts)
     if atts[:nickname] != ""
@@ -74,7 +68,6 @@ class Appointment < ActiveRecord::Base
   validates :duration, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :appointment_time, presence: { message: "must be a valid date" }
   validates :price, numericality: { greater_than_or_equal_to: 0 }, allow_blank: true
-  validates :client_id, presence: true
 
   validate :time_still_valid
 
@@ -87,20 +80,20 @@ class Appointment < ActiveRecord::Base
   class AppointmentTimeValidator
     def initialize(appointment)
       @appointment = appointment
-      @user = appointment.user
+      # @user = appointment.user
     end
 
     def validate
-      if @appointment.appointment_time
+      if @appointment.appointment_time && !@appointments.nil?
         # selects the user's appointments from yesterday,
         # today and tomorrow
-        appointments = @user.appointments.select { |a| a.appointment_time.midnight == @appointment.appointment_time.midnight || a.appointment_time.midnight == @appointment.appointment_time - 1.day || a.appointment_time.midnight == @appointment.appointment_time + 1.day }
+        @appointments.select { |a| a.appointment_time.midnight == @appointment.appointment_time.midnight || a.appointment_time.midnight == @appointment.appointment_time - 1.day || a.appointment_time.midnight == @appointment.appointment_time + 1.day }
         # makes sure that current appointments don't overlap
         # first checks if an existing appointment is still
         # in progress when the new appointment is set to start
         # next checks if the new appointment would still be in
         # progress when an existing appointment is set to start
-        appointments.each do |appointment|
+        @appointments.each do |appointment|
           if @appointment != appointment
             if appointment.appointment_time <= @appointment.appointment_time && @appointment.appointment_time <= appointment.end_time || @appointment.appointment_time <= appointment.appointment_time && appointment.appointment_time <= @appointment.end_time
               @appointment.errors.add(:appointment_time, "is not available.")

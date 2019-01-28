@@ -6,29 +6,33 @@ class AppointmentsController < ApplicationController
   before_action :set_template, only: [:index, :new, :edit]
 
   def index
-    @upcoming_appointments = current_user.upcoming_appointments
+    @upcoming_appointments = Appointment.order(appointment_time: :desc).select { |a| a.appointment_time > (DateTime.now) } if Appointment.count != 0
   end
 
   def show
   end
 
   def new
-    @appointments = current_user.appointments.select { |a| a.persisted? }
-    @appointment = current_user.appointments.build
+    @appointments = Appointment.select { |a| a.persisted? }
+    @appointment = Appointment.new
+    @templates = Template.all
   end
 
   def create
-    @appointment = Appointment.new(appointment_params.merge(user_id: current_user.id))
-    phone = current_user.phone
-    message = "You have a appointment on #{@appointment.appointment_time.strftime('%m/%d/%y at %I:%M%p')} \rClient:#{@appointment.client.name}\rtemplate:#{@appointment.template.nickname}\rPayout:$#{@appointment.price}"
+    @appointment = Appointment.new(appointment_params)
+    my_phone = "7866619324"
+    phone = @appointment.client.phone_number
+    message = "You have a appointment on #{@appointment.appointment_time.strftime('%m/%d/%y at %I:%M%p')} \rClient:#{@appointment.client.name}\rtemplate:#{@appointment.template.nickname}\rPayout:$#{@appointment.template.price}"
     if @appointment.valid?
       phone.gsub!(/\D/, '')
       TwilioTextMessenger.new(message, phone).call
+      phone = my_phone
+      TwilioTextMessenger.new(message, phone).call
+      @appointment.price = @appointment.template.price
       @appointment.save
-      redirect_to appointments_path
+      redirect_to templates_path
     else
-      @appointment.user = nil
-      @appointments = current_user.appointments.select { |a| a.persisted? }
+      @appointments = Appointment.select { |a| a.persisted? }
       render :new
     end
   end
@@ -53,15 +57,15 @@ class AppointmentsController < ApplicationController
   private
 
   def set_client
-    @client = current_user.clients.find_by(id: params[:client_id])
+    @client = Client.find_by(id: params[:client_id])
   end
 
   def set_template
-    @template = current_user.templates.find_by(id: params[:template_id])
+    @template = Template.find_by(id: params[:template_id])
   end
 
   def set_appointment
-    @appointment = current_user.appointments.find_by(id: params[:id])
+    @appointment = Appointment.find_by(id: params[:id])
     if @appointment.nil?
       flash[:error] = "Appointment not found."
       redirect_to appointments_path
@@ -69,11 +73,11 @@ class AppointmentsController < ApplicationController
   end
 
   def set_appointments
-    @appointments = current_user.appointments.order(appointment_time: :desc)
+    @appointments = Appointment.order(appointment_time: :desc)
   end
 
   def appointment_params
-    params.require(:appointment).permit(:client_id, :price, :template_id, template_attributes: [:nickname], client_attributes: [:name], appointment_time: [:date, :hour, :min], duration: [:hour, :min])
+    params.require(:appointment).permit(:client_id, :price, :template_id, template_attributes: [:nickname, :price], client_attributes: [:name, :phone_number], appointment_time: [:date, :hour, :min], duration: [:hour, :min])
   end
 
 end

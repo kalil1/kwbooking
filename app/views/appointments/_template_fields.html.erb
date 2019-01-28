@@ -1,0 +1,8 @@
+<% if current_user.templates.any? %>
+<div class="field">
+  <p>
+    <%= f.label :template_id %>
+    <%= collection_select :appointment, :template_id, @templates, :id, :nickname, {prompt: true } %>
+  </p>
+</div>
+<% end %>

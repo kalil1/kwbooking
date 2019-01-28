@@ -3,7 +3,7 @@ class TemplatesController < ApplicationController
   before_action :set_template, only: [:client_list, :show, :edit, :update, :destroy]
 
   def index
-    @templates = current_user.templates
+    @templates = Template.all
   end
 
   def client_list
@@ -15,11 +15,11 @@ class TemplatesController < ApplicationController
   end
 
   def new
-    @template = template.new
+    @template = Template.new
   end
 
   def create
-    @template = template.new(template_params)
+    @template = Template.new(template_params)
     if @template.valid?
       @template.user = current_user
       @template.save
@@ -48,7 +48,7 @@ class TemplatesController < ApplicationController
   private
 
   def set_template
-    @template = current_user.templates.find_by(id: params[:id])
+    @template = Template.find_by(id: params[:id])
     if @template.nil?
       flash[:error] = "template not found."
       redirect_to templates_path
@@ -56,6 +56,6 @@ class TemplatesController < ApplicationController
   end
 
   def template_params
-    params.require(:template).permit(:nickname, :street_address, :city, :state, :zipcode, :business_name)
+    params.require(:template).permit(:nickname, :src, :iframe, :price)
   end
 end

@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :clients
   has_many :appointments
   has_many :templates
 
@@ -14,10 +13,6 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
-  end
-
-  def upcoming_appointments
-    appointments.order(appointment_time: :desc).select { |a| a.appointment_time > (DateTime.now) }
   end
 
 end

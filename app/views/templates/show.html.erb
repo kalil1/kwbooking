@@ -1,7 +1,18 @@
+<style media="screen">
+  img {
+    height: 90px;
+    width: auto;
+  }
+  iframe {
+    height: 620px;
+    width: 100%;
+  }
+</style>
 <div class="zoom">
-<h1>template</h1>
+<h1>Template</h1>
 <%= render @template %>
-<h1>Appointments <%= link_to "+ New", new_template_appointment_path(@template) %></h1>
+<h1>Schedule <%= link_to "Hire Me", new_template_appointment_path(@template) %></h1>
 <%= render @appointments, template: "appointments/appointment" %>
 
 </div>
+<%= render "welcome/pricing" %>

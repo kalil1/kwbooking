@@ -33,7 +33,7 @@ module TemplatesHelper
   end
 
   def template_value(template)
-    number_to_currency(template.value) if template.value != 0
+    "Starting at #{number_to_currency(template.price)}" if template.price != 0
   end
 
   def client_count(template)
