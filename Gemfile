@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.4'
+ruby "3.3.0"
 
 gem 'omniauth-facebook'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "simple_calendar", "~> 2.0"
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 
@@ -48,16 +49,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'devise_invitable'
-gem 'mini_racer', '~> 0.2.4'
+gem 'therubyracer'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'high_voltage'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -71,7 +70,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
