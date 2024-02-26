@@ -12,6 +12,8 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "simple_calendar", "~> 2.0"
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 
+gem 'pry', '~> 0.14.2'
+gem 'rack-cors'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

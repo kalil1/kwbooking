@@ -1,9 +1,9 @@
 class AppointmentsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-  before_action :set_appointments, only: [:index, :show, :edit]
-  before_action :set_client, only: [:index, :new, :edit]
-  before_action :set_location, only: [:index, :new, :edit]
+  # before_action :authenticate_user!
+  # before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  # before_action :set_appointments, only: [:index, :show, :edit]
+  # before_action :set_client, only: [:index, :new, :edit]
+  # before_action :set_location, only: [:index, :new, :edit]
 
   def index
     @upcoming_appointments = current_user.upcoming_appointments

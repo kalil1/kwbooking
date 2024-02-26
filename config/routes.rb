@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :appointments
   resources :locations do
     resources :appointments, only: [:index, :show, :new]
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   resources :clients do
     resources :appointments, only: [:index, :show, :new]
   end
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'welcome/home'
   # root 'creatives#index'
   root 'welcome#home'
