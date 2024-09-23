@@ -22,4 +22,5 @@ Appointment times that are taken will not be recreated.
 <!-- ## Features
 * Search for upcoming appointments.
 * Register for an account.
-* Upload photos to include database. -->
+* Upload photos to include database. 
+-->
