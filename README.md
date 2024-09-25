@@ -19,8 +19,7 @@ KWBOOKING is a one of my personal projects. This application allows users to sig
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/error.png)
 Appointment times that are taken will not be recreated.
 
-<!-- ## Features
+## Coming Features
 * Search for upcoming appointments.
 * Register for an account.
-* Upload photos to include database. 
--->
+* Upload photos. 
