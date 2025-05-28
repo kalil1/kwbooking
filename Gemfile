@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'frontend-generators'
 
 gem 'figaro'
+gem 'faker'
 
 gem 'twilio-ruby'
 
