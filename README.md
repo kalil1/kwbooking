@@ -1,7 +1,6 @@
 ## README# KWBOOKING
 KWBOOKING is a one of my personal projects. This application allows users to sign up, create their own appointments. Each appointment has a location client and a price. Don't worry about keeping track of how much money your making at each location or with a specific client.... the app takes care of that as you'll see below.
 
-
 ## Project Photos & Details
 
 ![KWBOOKING](https://github.com/kalil1/kwbooking/blob/master/app/assets/images/sign-up-wp.png)
